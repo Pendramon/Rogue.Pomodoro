@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Rogue.Pomodoro.WPF.ViewModels;
 using Rogue.Pomodoro.WPF.ViewModels.Interfaces;
+using Rogue.Pomodoro.WPF.ViewModels.MainContent;
+using Rogue.Pomodoro.WPF.ViewModels.MainContent.Interfaces;
 using Rogue.Pomodoro.WPF.Views;
 using System.Windows;
 
@@ -29,6 +31,8 @@ public partial class App : Application
 
     private void ConfigureServices(ServiceCollection services)
     {
+        services.AddSingleton<Bootstrapper>();
+        services.AddSingleton<IMainContentViewModel, MainContentViewModel>();
         services.AddSingleton<IMainWindowViewModel, MainWindowViewModel>();
         services.AddSingleton<MainWindow>();
     }

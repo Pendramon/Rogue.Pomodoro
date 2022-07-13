@@ -3,10 +3,120 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Rogue.Pomodoro.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="Rogue Pomodoro" Height="450" Width="800" Background="{DynamicResource MainWindow.BackgroundBrushKey}" SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.ClearTypeHint="Enabled" TextOptions.TextRenderingMode="ClearType" AllowsTransparency="True" SizeChanged="Window_StateChanged" WindowStyle="None">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="28" UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <Style TargetType="{x:Type Panel}" x:Key="WindowMainPanelStyle">
+            <Setter Property="Margin" Value="0" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=WindowState}" Value="Maximized">
+                    <Setter Property="Margin" Value="7" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{StaticResource WindowMainPanelStyle}" SnapsToDevicePixels="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <Label Foreground="{DynamicResource MainWindow.TextBrushKey}" Content="{Binding Title}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+            <Button x:Name="MinimizeButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Click="MinimizeButton_Click">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Viewbox Width="46" Height="16">
+                    <Rectangle Width="16" Height="16">
+                        <Rectangle.Fill>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control}}" Geometry="F1M3,8L13,8 13,7 3,7z" />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Viewbox>
+            </Button>
+            <Button x:Name="MaximizeButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Click="MaximizeButton_Click">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Viewbox Width="46" Height="16">
+                    <Rectangle Width="16" Height="16">
+                        <Rectangle.Fill>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control}}" Geometry="F1M12,12L4,12 4,4 12,4z M3,13L13,13 13,3 3,3z" />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Viewbox>
+            </Button>
+            <Button x:Name="RestoreButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Click="RestoreButton_Click">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Viewbox Width="46" Height="16">
+                    <Rectangle Width="16" Height="16">
+                        <Rectangle.Fill>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control}}" Geometry="F1M11.999,10.002L10.998,10.002 10.998,5.002 5.998,5.002 5.998,4.001 11.999,4.001z M10.002,11.999L4.001,11.999 4.001,5.998 10.002,5.998z M5.002,3L5.002,5.002 3,5.002 3,13 10.998,13 10.998,10.998 13,10.998 13,3z" />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Viewbox>
+            </Button>
+            <Button x:Name="CloseButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Click="CloseButton_Click">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Viewbox Width="46" Height="16">
+                    <Rectangle Width="16" Height="16">
+                        <Rectangle.Fill>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control}}" Geometry="F1M8.583,8L13,12.424 12.424,13 8,8.583 3.576,13 3,12.424 7.417,8 3,3.576 3.576,3 8,7.417 12.424,3 13,3.576z" />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Viewbox>
+            </Button>
+        </StackPanel>
+        <ContentPresenter Content="{Binding CurrentMainContentViewModel}"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
     </Grid>
 </Window>

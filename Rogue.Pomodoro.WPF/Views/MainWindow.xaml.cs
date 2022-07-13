@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Rogue.Pomodoro.WPF;
+namespace Rogue.Pomodoro.WPF.Views;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml.

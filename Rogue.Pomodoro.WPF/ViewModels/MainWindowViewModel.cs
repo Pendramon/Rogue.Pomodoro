@@ -9,7 +9,7 @@ namespace Rogue.Pomodoro.WPF.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 {
-    private string title = "Rogue";
+    private string title = "Rogue Pomodoro";
 
     private IViewModel? previousMainContentViewModel;
 

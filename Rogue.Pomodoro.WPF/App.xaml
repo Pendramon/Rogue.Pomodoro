@@ -9,15 +9,17 @@
             <DataTemplate DataType="{x:Type viewModels:MainWindowViewModel}">
                 <views:MainWindow />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type mainContent:MainContentViewModel}">
-                <views:MainContentView />
+            <DataTemplate DataType="{x:Type mainContent:PomodoroTimerViewModel}">
+                <views:PomodoroTimerView />
             </DataTemplate>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/Buttons.xaml" />
-                <ResourceDictionary Source="Styles/TextBoxes.xaml" />
-                <ResourceDictionary Source="Styles/ComboBoxes.xaml" />
+                <ResourceDictionary Source="Converters/Converters.xaml"/>
                 <ResourceDictionary Source="Styles/Colors.xaml" />
+                <ResourceDictionary Source="Styles/TextBoxes.xaml" />
+                <ResourceDictionary Source="Styles/Labels.xaml" />
+                <ResourceDictionary Source="Styles/Buttons.xaml" />
+                <ResourceDictionary Source="Styles/ComboBoxes.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

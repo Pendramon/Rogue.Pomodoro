@@ -18,6 +18,7 @@
     <SolidColorBrush x:Key="CommonControls.Textbox.MouseOver.BorderBrushKey" Color="#FF434346"/>
     <SolidColorBrush x:Key="CommonControls.Textbox.MouseOver.TextBrushKey" Color="#FFF1F1F1"/>
     <SolidColorBrush x:Key="CommonControls.Textbox.TextBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.Label.TextBrushKey" Color="#FFF1F1F1"/>
     <SolidColorBrush x:Key="CommonControls.ComboBoxBrushKey" Color="#FF333337"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.BorderBrushKey" Color="#FF434346"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.Button.MouseOverBrushKey" Color="#FF1F1F20"/>

@@ -3,6 +3,7 @@ using Rogue.Pomodoro.WPF.ViewModels.Base.Interfaces;
 using Rogue.Pomodoro.WPF.ViewModels.Interfaces;
 using Rogue.Pomodoro.WPF.ViewModels.MainContent.Interfaces;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Rogue.Pomodoro.WPF.ViewModels;
@@ -13,14 +14,14 @@ public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 
     private IViewModel? previousMainContentViewModel;
 
-    private IViewModel? currentMainContentViewModel;
+    private IViewModel currentMainContentViewModel;
 
     public MainWindowViewModel(IMainContentViewModel mainContentViewModel)
     {
         ViewModelsList = new List<IViewModel>()
-            {
-                mainContentViewModel,
-            };
+        {
+            mainContentViewModel,
+        };
         SetDefaultViewModel();
     }
 
@@ -38,7 +39,7 @@ public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
         }
     }
 
-    public IViewModel? CurrentMainContentViewModel
+    public IViewModel CurrentMainContentViewModel
     {
         get => currentMainContentViewModel;
         set
@@ -56,8 +57,9 @@ public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 
     private List<IViewModel> ViewModelsList { get; }
 
+    [MemberNotNull(nameof(currentMainContentViewModel))]
     private void SetDefaultViewModel()
     {
-        CurrentMainContentViewModel = ViewModelsList.First(x => x is IMainContentViewModel);
+        currentMainContentViewModel = ViewModelsList.First(x => x is IMainContentViewModel);
     }
 }

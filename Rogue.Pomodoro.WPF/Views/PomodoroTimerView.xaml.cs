@@ -5,9 +5,9 @@ namespace Rogue.Pomodoro.WPF.Views;
 /// <summary>
 /// Interaction logic for MainContentView.xaml.
 /// </summary>
-public partial class MainContentView : UserControl
+public partial class PomodoroTimerView : UserControl
 {
-    public MainContentView()
+    public PomodoroTimerView()
     {
         InitializeComponent();
     }

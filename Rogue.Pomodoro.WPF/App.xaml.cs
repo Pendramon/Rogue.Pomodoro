@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Rogue.Pomodoro.Core;
+using Rogue.Pomodoro.Core.Interfaces;
 using Rogue.Pomodoro.WPF.ViewModels;
 using Rogue.Pomodoro.WPF.ViewModels.Interfaces;
 using Rogue.Pomodoro.WPF.ViewModels.MainContent;
@@ -32,7 +34,8 @@ public partial class App : Application
     private void ConfigureServices(ServiceCollection services)
     {
         services.AddSingleton<Bootstrapper>();
-        services.AddSingleton<IMainContentViewModel, MainContentViewModel>();
+        services.AddSingleton<IPomodoroTimer, PomodoroTimer>();
+        services.AddSingleton<IMainContentViewModel, PomodoroTimerViewModel>();
         services.AddSingleton<IMainWindowViewModel, MainWindowViewModel>();
         services.AddSingleton<MainWindow>();
     }

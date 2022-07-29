@@ -1,65 +1,66 @@
+using Rogue.Pomodoro.WPF.Commands;
 using Rogue.Pomodoro.WPF.ViewModels.Base;
-using Rogue.Pomodoro.WPF.ViewModels.Base.Interfaces;
 using Rogue.Pomodoro.WPF.ViewModels.Interfaces;
 using Rogue.Pomodoro.WPF.ViewModels.MainContent.Interfaces;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Windows.Input;
 
 namespace Rogue.Pomodoro.WPF.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 {
-    private string title = "Rogue Pomodoro";
-
-    private IViewModel? previousMainContentViewModel;
-
-    private IViewModel currentMainContentViewModel;
-
-    public MainWindowViewModel(IMainContentViewModel mainContentViewModel)
+    public MainWindowViewModel(IEnumerable<IMainContentViewModel> mainContentViewModels)
     {
-        ViewModelsList = new List<IViewModel>()
-        {
-            mainContentViewModel,
-        };
+        Title = "Rogue Pomodoro";
+        MainContentViewModels = mainContentViewModels;
+        RegisterChildren(MainContentViewModels);
+        GoToHome = new RelayCommand(NavigateToHome);
         SetDefaultViewModel();
     }
 
     public string Title
     {
-        get => title;
-        set
-        {
-            if (title != value)
-            {
-                OnPropertyChanged();
-            }
-
-            title = value;
-        }
+        get => GetProperty<string>() ?? string.Empty;
+        private set => SetProperty(value);
     }
 
-    public IViewModel CurrentMainContentViewModel
+    public IMainContentViewModel CurrentMainContentViewModel
     {
-        get => currentMainContentViewModel;
-        set
-        {
-            if (value == currentMainContentViewModel)
-            {
-                return;
-            }
+        get => GetProperty<IMainContentViewModel>()!;
+        private set => SetProperty(value);
+    }
 
-            previousMainContentViewModel = currentMainContentViewModel;
-            currentMainContentViewModel = value;
-            OnPropertyChanged();
+    public ICommand GoToHome { get; }
+
+    private IEnumerable<IMainContentViewModel> MainContentViewModels { get; }
+
+    protected override void OnChildMessage(object? sender, ChildMessageArgs e)
+    {
+        base.OnChildMessage(sender, e);
+        switch (e.Key)
+        {
+            case ChildMessageType.ChangeMainContentView:
+                ChangeMainContentView((Type)e.Value);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(e));
         }
     }
 
-    private List<IViewModel> ViewModelsList { get; }
+    private void NavigateToHome()
+    {
+        CurrentMainContentViewModel = MainContentViewModels.First(x => x is IHomeViewModel);
+    }
 
-    [MemberNotNull(nameof(currentMainContentViewModel))]
     private void SetDefaultViewModel()
     {
-        currentMainContentViewModel = ViewModelsList.First(x => x is IMainContentViewModel);
+        CurrentMainContentViewModel = MainContentViewModels.First(x => x is IHomeViewModel);
+    }
+
+    private void ChangeMainContentView(Type type)
+    {
+        CurrentMainContentViewModel = MainContentViewModels.First(type.IsInstanceOfType);
     }
 }

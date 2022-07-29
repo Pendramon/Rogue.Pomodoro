@@ -9,6 +9,12 @@
             <DataTemplate DataType="{x:Type viewModels:MainWindowViewModel}">
                 <views:MainWindow />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type mainContent:SettingsViewModel}">
+                <views:SettingsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type mainContent:HomeViewModel}">
+                <views:HomeView />
+            </DataTemplate>
             <DataTemplate DataType="{x:Type mainContent:PomodoroTimerViewModel}">
                 <views:PomodoroTimerView />
             </DataTemplate>

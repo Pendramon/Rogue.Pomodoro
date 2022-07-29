@@ -1,6 +1,5 @@
 using Rogue.Pomodoro.WPF.ViewModels.Interfaces;
 using Rogue.Pomodoro.WPF.Views;
-using System.Threading.Tasks;
 
 namespace Rogue.Pomodoro.WPF;
 
@@ -15,7 +14,7 @@ public class Bootstrapper
         this.mainWindowViewModel = mainWindowViewModel;
     }
 
-    public async Task InitializeAsync()
+    public void Initialize()
     {
         mainWindow.DataContext = mainWindowViewModel;
         mainWindow.Show();

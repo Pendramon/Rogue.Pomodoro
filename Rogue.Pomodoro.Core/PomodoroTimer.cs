@@ -21,12 +21,11 @@ public class PomodoroTimer : IPomodoroTimer, INotifyPropertyChanged
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
+    public event EventHandler? Finished;
+
     public TimeSpan PomodoroLength
     {
-        get
-        {
-            return pomodoroLength;
-        }
+        get => pomodoroLength;
 
         private set
         {
@@ -37,10 +36,7 @@ public class PomodoroTimer : IPomodoroTimer, INotifyPropertyChanged
 
     public TimeSpan RemainingTime
     {
-        get
-        {
-            return remainingTime;
-        }
+        get => remainingTime;
 
         private set
         {
@@ -51,7 +47,7 @@ public class PomodoroTimer : IPomodoroTimer, INotifyPropertyChanged
 
     public bool IsRunning => Timer.Enabled;
 
-    private Timer Timer { get; set; } = new Timer();
+    private Timer Timer { get; } = new();
 
     private DateTime StartTime { get; set; }
 
@@ -95,6 +91,7 @@ public class PomodoroTimer : IPomodoroTimer, INotifyPropertyChanged
         {
             Stop();
             RemainingTime = PomodoroLength;
+            Finished?.Invoke(this, EventArgs.Empty);
             return;
         }
 

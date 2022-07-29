@@ -4,6 +4,8 @@ namespace Rogue.Pomodoro.Core.Interfaces;
 
 public interface IPomodoroTimer
 {
+    public event EventHandler? Finished;
+
     public TimeSpan PomodoroLength { get; }
 
     public TimeSpan RemainingTime { get; }

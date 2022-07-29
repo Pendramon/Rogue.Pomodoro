@@ -3,8 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:Rogue.Pomodoro.WPF.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewModels:MainWindowViewModel}"
         mc:Ignorable="d"
-        Title="Rogue Pomodoro" Height="450" Width="800" Background="{DynamicResource MainWindow.BackgroundBrushKey}" SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.ClearTypeHint="Enabled" TextOptions.TextRenderingMode="ClearType" AllowsTransparency="True" SizeChanged="Window_StateChanged" WindowStyle="None">
+        Title="{Binding Title}"
+        Height="450"
+        Width="800"
+        MinHeight="250"
+        MinWidth="500"
+        Background="{DynamicResource MainWindow.BackgroundBrushKey}"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True"
+        RenderOptions.ClearTypeHint="Enabled"
+        TextOptions.TextRenderingMode="ClearType"
+        AllowsTransparency="True"
+        SizeChanged="Window_StateChanged"
+        WindowStyle="None">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="28" UseAeroCaptionButtons="False" />
     </WindowChrome.WindowChrome>
@@ -28,8 +42,29 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            <Label Foreground="{DynamicResource MainWindow.TextBrushKey}" Content="{Binding Title}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+            <Button x:Name="HomeButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Command="{Binding GoToHome}">
+                <Button.FocusVisualStyle>
+                    <Style/>
+                </Button.FocusVisualStyle>
+                <Viewbox Width="16" Height="16">
+                    <Rectangle Width="16" Height="16">
+                        <Rectangle.Fill>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                            <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Control}}" Geometry="F1M0.6462,8.6461L1.3532,9.3531 2.0002,8.7071 2.0002,15.0001 7.0002,15.0001 7.0002,10.0001 9.0002,10.0001 9.0002,15.0001 14.0002,15.0001 14.0002,8.7071 14.6462,9.3531 15.3532,8.6461 8.0002,1.2931z M3.0002,7.7071L8.0002,2.7071 12.9992,7.7071 12.9992,14.0001 10.0002,14.0001 10.0002,9.0001 6.0002,9.0001 6.0002,14.0001 3.0002,14.0001z" />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Viewbox>
+            </Button>
+            <Label Foreground="{DynamicResource MainWindow.TextBrushKey}" Content="{Binding Title}" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
             <Button x:Name="MinimizeButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Click="MinimizeButton_Click">
@@ -117,6 +152,6 @@
                 </Viewbox>
             </Button>
         </StackPanel>
-        <ContentPresenter Content="{Binding CurrentMainContentViewModel}"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+        <ContentPresenter Content="{Binding CurrentMainContentViewModel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
     </Grid>
 </Window>

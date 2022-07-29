@@ -18,7 +18,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.TextBrushKey}"/>
-                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOverBrushKey}"/>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="splitBorder" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.BorderBrushKey}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
@@ -28,7 +28,7 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.TextBrushKey}"/>
-                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.DisabledBrushKey}"/>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.BorderBrushKey}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -44,8 +44,8 @@
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="Foreground" Value="{DynamicResource CommonControls.ComboBox.TextBox.TextBrushKey}"/>
         <Setter Property="SelectionTextBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.Highlight.TextBrushKey}"></Setter>
-        <Setter Property="SelectionBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.HighlightBrushKey}"></Setter>
-        <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.TextBoxBrushKey}"/>
+        <Setter Property="SelectionBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.Highlight.SelectionBrushKey}"></Setter>
+        <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.TextBox.BackgroundBrushKey}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -58,7 +58,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.TextBox.MouseOverBrushKey}"/>
+                <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.TextBox.MouseOver.BackgroundBrushKey}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.MouseOver.BorderBrushKey}"/>
             </Trigger>
         </Style.Triggers>
@@ -72,7 +72,7 @@
                 </Grid.ColumnDefinitions>
                 <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
                     <theme:SystemDropShadowChrome x:Name="shadow" Color="Transparent" MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                        <Border x:Name="dropDownBorder" Background="{DynamicResource CommonControls.ComboBox.PopUpBrushKey}" BorderThickness="1" BorderBrush="{DynamicResource CommonControls.ComboBox.PopUp.BorderBrushKey}">
+                        <Border x:Name="dropDownBorder" Background="{DynamicResource CommonControls.ComboBox.PopUp.BackgroundBrushKey}" BorderThickness="1" BorderBrush="{DynamicResource CommonControls.ComboBox.PopUp.BorderBrushKey}">
                             <ScrollViewer x:Name="DropDownScrollViewer">
                                 <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
                                     <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
@@ -92,7 +92,7 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.MouseOverBrushKey}"/>
+                <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.MouseOver.BackgroundBrushKey}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.ComboBox.MouseOver.BorderBrushKey}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
@@ -123,7 +123,7 @@
                 </Grid.ColumnDefinitions>
                 <Popup Grid.Column="0" x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
                     <theme:SystemDropShadowChrome x:Name="shadow" Color="Transparent" MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                        <Border x:Name="dropDownBorder" Background="{DynamicResource CommonControls.ComboBox.PopUpBrushKey}" BorderThickness="1" BorderBrush="{DynamicResource CommonControls.ComboBox.PopUp.BorderBrushKey}">
+                        <Border x:Name="dropDownBorder" Background="{DynamicResource CommonControls.ComboBox.PopUp.BackgroundBrushKey}" BorderThickness="1" BorderBrush="{DynamicResource CommonControls.ComboBox.PopUp.BorderBrushKey}">
                             <ScrollViewer x:Name="DropDownScrollViewer">
                                 <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
                                     <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
@@ -143,7 +143,7 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.MouseOverBrushKey}"/>
+                <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.MouseOver.BackgroundBrushKey}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.ComboBox.MouseOver.BorderBrushKey}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
@@ -166,7 +166,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style TargetType="{x:Type ComboBox}">
-        <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBoxBrushKey}"/>
+        <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.BackgroundBrushKey}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.ComboBox.BorderBrushKey}"/>
         <Setter Property="Foreground" Value="{DynamicResource CommonControls.ComboBox.TextBrushKey}"/>
         <Setter Property="BorderThickness" Value="1"/>

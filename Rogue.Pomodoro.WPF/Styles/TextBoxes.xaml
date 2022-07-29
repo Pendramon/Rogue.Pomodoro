@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{DynamicResource CommonControls.TextboxBrushKey}"/>
+        <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.BackgroundBrushKey}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.Textbox.BorderBrushKey}"/>
         <Setter Property="Foreground" Value="{DynamicResource CommonControls.Textbox.TextBrushKey}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -12,7 +12,7 @@
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="SelectionTextBrush" Value="{DynamicResource Environment.Highlight.TextBrushKey}"/>
-        <Setter Property="SelectionBrush" Value="{DynamicResource Environment.HighlightBrushKey}"/>
+        <Setter Property="SelectionBrush" Value="{DynamicResource Environment.Highlight.SelectionBrushKey}"/>
         <Setter Property="SelectionOpacity" Value="1"></Setter>
         <Setter Property="Template">
             <Setter.Value>
@@ -30,12 +30,12 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.DisabledBrushKey}"/>
+                            <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.Disabled.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource CommonControls.Textbox.Disabled.BorderBrushKey}"/>
                             <Setter Property="Foreground" Value="{DynamicResource CommonControls.Textbox.Disabled.TextBrushKey}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.MouseOverBrushKey}"/>
+                            <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.MouseOver.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource CommonControls.Textbox.MouseOver.BorderBrushKey}"/>
                             <Setter Property="Foreground" Value="{DynamicResource CommonControls.Textbox.MouseOver.TextBrushKey}"/>
                         </Trigger>
@@ -50,7 +50,7 @@
                     <Condition Property="IsSelectionActive" Value="false"/>
                 </MultiTrigger.Conditions>
                 <Setter Property="SelectionTextBrush" Value="{DynamicResource Environment.Highlight.TextBrushKey}"/>
-                <Setter Property="SelectionBrush" Value="{DynamicResource Environment.HighlightBrushKey}"/>
+                <Setter Property="SelectionBrush" Value="{DynamicResource Environment.Highlight.SelectionBrushKey}"/>
             </MultiTrigger>
         </Style.Triggers>
     </Style>

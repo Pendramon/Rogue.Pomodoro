@@ -39,7 +39,10 @@ public class SettingsViewModel : ViewModelBase, ISettingsViewModel
             return;
         }
 
-        AppBlockService.Add(new BlockedApp(Path.GetFileNameWithoutExtension(dialog.FileName)));
+        foreach (var fileName in dialog.FileNames)
+        {
+            AppBlockService.Add(new BlockedApp(Path.GetFileNameWithoutExtension(fileName)));
+        }
     }
 
     private void DeleteFile()

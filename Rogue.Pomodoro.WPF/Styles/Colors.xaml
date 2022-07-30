@@ -39,4 +39,17 @@
     <SolidColorBrush x:Key="CommonControls.ComboBox.PopUp.BackgroundBrushKey" Color="#FF1B1B1C"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.PopUp.BorderBrushKey" Color="#FF333337"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.TextBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.ListBox.BackgroundBrushKey" Color="#FF1F1F1F"/>
+    <SolidColorBrush x:Key="CommonControls.ListBox.ForegroundBrushKey" Color="#FFE4E4E4"/>
+    <SolidColorBrush x:Key="CommonControls.ListBox.BorderBrushKey" Color="#FF3D3D3D"/>
+    <SolidColorBrush x:Key="CommonControls.ListBox.Disabled.BackgroundBrushKey" Color="#FF1F1F1F"/>
+    <SolidColorBrush x:Key="CommonControls.ListBox.Disabled.ForegroundBrushKey" Color="#FF999999"/>
+    <SolidColorBrush x:Key="CommonControls.ListBox.Disabled.BorderBrushKey" Color="#FF999999"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.FocusBrushKey" Color="#FF999999"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.MouseOverBrushKey" Color="#FF3D3D3D"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.MouseOver.BorderBrushKey" Color="#FF3D3D3D"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.SelectedActive.BackgroundBrushKey" Color="#3D26A0DA"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.SelectedActive.BorderBrushKey" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.SelectedInactive.BackgroundBrushKey" Color="#3DDADADA"/>
+    <SolidColorBrush x:Key="CommonControls.ListBoxItem.SelectedInactive.BorderBrushKey" Color="#FFDADADA"/>
 </ResourceDictionary>

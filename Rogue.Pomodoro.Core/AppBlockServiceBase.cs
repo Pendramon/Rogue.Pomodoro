@@ -2,6 +2,7 @@ using Rogue.Pomodoro.Core.Interfaces;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Rogue.Pomodoro.Core;
@@ -34,7 +35,7 @@ public abstract class AppBlockServiceBase : IAppBlockService, INotifyPropertyCha
     /// <param name="app">The app to add to the blocked app list.</param>
     public virtual void Add(IBlockedApp app)
     {
-        if (blockedApps.Contains(app))
+        if (blockedApps.Any(a => a.Name == app.Name))
         {
             return;
         }

@@ -12,22 +12,22 @@
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="templateRoot" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
                         <Border x:Name="splitBorder" BorderThickness="1,0,0,0" HorizontalAlignment="Right" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
-                            <Path x:Name="arrow" Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z" Fill="{DynamicResource CommonControls.ComboBox.Button.TextBrushKey}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Path x:Name="arrow" Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z" Fill="{DynamicResource CommonControls.ComboBox.Button.ForegroundBrushKey}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.TextBrushKey}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.ForegroundBrushKey}"/>
                             <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="splitBorder" Value="{DynamicResource CommonControls.ComboBox.Button.MouseOver.BorderBrushKey}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.Pressed.TextBrushKey}"/>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource CommonControls.ComboBox.Button.PressedBrushKey}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.Pressed.ForegroundBrushKey}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource CommonControls.ComboBox.Button.Pressed.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="splitBorder" Value="{DynamicResource CommonControls.ComboBox.Button.Pressed.BorderBrushKey}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.TextBrushKey}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.ForegroundBrushKey}"/>
                             <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.BackgroundBrushKey}"/>
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource CommonControls.ComboBox.Button.Disabled.BorderBrushKey}"/>
                         </Trigger>
@@ -42,8 +42,8 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="Foreground" Value="{DynamicResource CommonControls.ComboBox.TextBox.TextBrushKey}"/>
-        <Setter Property="SelectionTextBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.Highlight.TextBrushKey}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource CommonControls.ComboBox.TextBox.ForegroundBrushKey}"/>
+        <Setter Property="SelectionTextBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.Highlight.SelectionTextBrushKey}"></Setter>
         <Setter Property="SelectionBrush" Value="{DynamicResource CommonControls.ComboBox.TextBox.Highlight.SelectionBrushKey}"></Setter>
         <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.TextBox.BackgroundBrushKey}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -168,7 +168,7 @@
     <Style TargetType="{x:Type ComboBox}">
         <Setter Property="Background" Value="{DynamicResource CommonControls.ComboBox.BackgroundBrushKey}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.ComboBox.BorderBrushKey}"/>
-        <Setter Property="Foreground" Value="{DynamicResource CommonControls.ComboBox.TextBrushKey}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CommonControls.ComboBox.ForegroundBrushKey}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>

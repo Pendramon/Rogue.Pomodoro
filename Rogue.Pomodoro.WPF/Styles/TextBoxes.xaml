@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.BackgroundBrushKey}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.Textbox.BorderBrushKey}"/>
-        <Setter Property="Foreground" Value="{DynamicResource CommonControls.Textbox.TextBrushKey}"/>
+        <Setter Property="Background" Value="{DynamicResource CommonControls.TextBox.BackgroundBrushKey}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource CommonControls.TextBox.BorderBrushKey}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CommonControls.TextBox.ForegroundBrushKey}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -11,7 +11,7 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="SelectionTextBrush" Value="{DynamicResource Environment.Highlight.TextBrushKey}"/>
+        <Setter Property="SelectionTextBrush" Value="{DynamicResource Environment.Highlight.SelectionTextBrushKey}"/>
         <Setter Property="SelectionBrush" Value="{DynamicResource Environment.Highlight.SelectionBrushKey}"/>
         <Setter Property="SelectionOpacity" Value="1"></Setter>
         <Setter Property="Template">
@@ -30,14 +30,14 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.Disabled.BackgroundBrushKey}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource CommonControls.Textbox.Disabled.BorderBrushKey}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource CommonControls.Textbox.Disabled.TextBrushKey}"/>
+                            <Setter Property="Background" Value="{DynamicResource CommonControls.TextBox.Disabled.BackgroundBrushKey}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource CommonControls.TextBox.Disabled.BorderBrushKey}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource CommonControls.TextBox.Disabled.ForegroundBrushKey}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="{DynamicResource CommonControls.Textbox.MouseOver.BackgroundBrushKey}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource CommonControls.Textbox.MouseOver.BorderBrushKey}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource CommonControls.Textbox.MouseOver.TextBrushKey}"/>
+                            <Setter Property="Background" Value="{DynamicResource CommonControls.TextBox.MouseOver.BackgroundBrushKey}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource CommonControls.TextBox.MouseOver.BorderBrushKey}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource CommonControls.TextBox.MouseOver.ForegroundBrushKey}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -49,7 +49,7 @@
                     <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
                     <Condition Property="IsSelectionActive" Value="false"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="SelectionTextBrush" Value="{DynamicResource Environment.Highlight.TextBrushKey}"/>
+                <Setter Property="SelectionTextBrush" Value="{DynamicResource Environment.Highlight.SelectionTextBrushKey}"/>
                 <Setter Property="SelectionBrush" Value="{DynamicResource Environment.Highlight.SelectionBrushKey}"/>
             </MultiTrigger>
         </Style.Triggers>

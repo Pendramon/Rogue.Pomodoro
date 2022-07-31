@@ -17,7 +17,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource ListBoxItemFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ListBoxItemFocusVisual}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -45,8 +45,8 @@
                                 <Condition Property="Selector.IsSelectionActive" Value="True"/>
                                 <Condition Property="IsSelected" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource CommonControls.ListBoxItem.SelectedActive.BackgroundBrushKey}"/>
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource CommonControls.ListBoxItem.SelectedActive.BorderBrushKey}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource CommonControls.ListBoxItem.SelectedActive.BackgroundBrushKey}"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{DynamicResource CommonControls.ListBoxItem.SelectedActive.BorderBrushKey}"/>
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{DynamicResource CommonControls.ListBox.Disabled.ForegroundBrushKey}"/>

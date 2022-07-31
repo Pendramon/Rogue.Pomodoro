@@ -1,44 +1,60 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="MainWindow.BackgroundBrushKey" Color="#FF2D2D30"/>
-    <SolidColorBrush x:Key="MainWindow.TextBrushKey" Color="#FF999999"/>
+    <SolidColorBrush x:Key="MainWindow.ForegroundBrushKey" Color="#FF999999"/>
     <SolidColorBrush x:Key="MainWindow.IconBrushKey" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="MainWindow.Button.ForegroundBrushKey" Color="#FFF1F1F1"/>
     <SolidColorBrush x:Key="MainWindow.Button.Hovered.BackgroundBrushKey" Color="#72555555"/>
     <SolidColorBrush x:Key="MainWindow.Button.Pressed.BackgroundBrushKey" Color="#FF007ACC"/>
     <SolidColorBrush x:Key="MainWindow.Button.Hovered.GlyphBrushKey" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="Environment.Highlight.SelectionBrushKey" Color="#FF3399FF"/>
-    <SolidColorBrush x:Key="Environment.Highlight.TextBrushKey" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.BackgroundBrushKey" Color="#FF333337"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.BorderBrushKey" Color="#FF434346"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.Disabled.BackgroundBrushKey" Color="#FF252526"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.Disabled.BorderBrushKey" Color="#FF434346"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.Disabled.TextBrushKey" Color="#FF656565"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.MouseOver.BackgroundBrushKey" Color="#FF3F3F46"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.MouseOver.BorderBrushKey" Color="#FF434346"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.MouseOver.TextBrushKey" Color="#FFF1F1F1"/>
-    <SolidColorBrush x:Key="CommonControls.Textbox.TextBrushKey" Color="#FFF1F1F1"/>
-    <SolidColorBrush x:Key="CommonControls.Label.TextBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="Environment.Highlight.SelectionTextBrushKey" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="CommonControls.Button.BackgroundBrushKey" Color="#FFDDDDDD"/>
+    <SolidColorBrush x:Key="CommonControls.Button.BorderBrushKey" Color="#FF707070"/>
+    <SolidColorBrush x:Key="CommonControls.Button.ForegroundBrushKey" Color="#FF000000"/>
+    <SolidColorBrush x:Key="CommonControls.Button.FocusBrushKey" Color="#FF6F6F6F"/>
+    <SolidColorBrush x:Key="CommonControls.Button.MouseOver.BackgroundBrushKey" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="CommonControls.Button.MouseOver.BorderBrushKey" Color="#FF3C7FB1"/>
+    <SolidColorBrush x:Key="CommonControls.Button.Pressed.BackgroundBrushKey" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="CommonControls.Button.Pressed.BorderBrushKey" Color="#FF2C628B"/>
+    <SolidColorBrush x:Key="CommonControls.Button.Disabled.BackgroundBrushKey" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="CommonControls.Button.Disabled.BorderBrushKey" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="CommonControls.Button.Disabled.ForegroundBrushKey" Color="#FF838383"/>
+    <SolidColorBrush x:Key="CommonControls.Button.Defaulted.BorderBrushKey" Color="#FF0078D7"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.BackgroundBrushKey" Color="#FF333337"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.BorderBrushKey" Color="#FF434346"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.Disabled.BackgroundBrushKey" Color="#FF252526"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.Disabled.BorderBrushKey" Color="#FF434346"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.Disabled.ForegroundBrushKey" Color="#FF656565"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.MouseOver.BackgroundBrushKey" Color="#FF3F3F46"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.MouseOver.BorderBrushKey" Color="#FF434346"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.MouseOver.ForegroundBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.TextBox.ForegroundBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.Label.ForegroundBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.Label.Enabled.ForegroundBrushKey" Color="#FF6D6D6D"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.BackgroundBrushKey" Color="#FF333337"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.BorderBrushKey" Color="#FF434346"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.Button.MouseOver.BackgroundBrushKey" Color="#FF1F1F20"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.Button.MouseOver.BorderBrushKey" Color="#FF007ACC"/>
-    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.MouseOver.TextBrushKey" Color="#FFF1F1F1"/>
-    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.TextBrushKey" Color="#FFF1F1F1"/>
-    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Disabled.TextBrushKey" Color="#FF6D6D6D"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.MouseOver.ForegroundBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.ForegroundBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Disabled.ForegroundBrushKey" Color="#FF6D6D6D"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Disabled.BackgroundBrushKey" Color="#FF2D2D30"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Disabled.BorderBrushKey" Color="#FF434346"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Pressed.BackgroundBrushKey" Color="#FF1F1F1F"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Pressed.ForegroundBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.Button.Pressed.BorderBrushKey" Color="#FF9E9E9E"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.MouseOver.BackgroundBrushKey" Color="#FF3F3F46"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.MouseOver.BorderBrushKey" Color="#FF569DE5"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.MouseOver.BackgroundBrushKey" Color="#FF3F3F46"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.MouseOver.BorderBrushKey" Color="#FF434346"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.BackgroundBrushKey" Color="#FF333337"/>
-    <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.TextBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.ForegroundBrushKey" Color="#FFF1F1F1"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.Highlight.SelectionBrushKey" Color="#FF0078D7"/>
-    <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.Highlight.TextBrushKey" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.TextBox.Highlight.SelectionTextBrushKey" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.PopUp.BackgroundBrushKey" Color="#FF1B1B1C"/>
     <SolidColorBrush x:Key="CommonControls.ComboBox.PopUp.BorderBrushKey" Color="#FF333337"/>
-    <SolidColorBrush x:Key="CommonControls.ComboBox.TextBrushKey" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="CommonControls.ComboBox.ForegroundBrushKey" Color="#FFF1F1F1"/>
     <SolidColorBrush x:Key="CommonControls.ListBox.BackgroundBrushKey" Color="#FF1F1F1F"/>
     <SolidColorBrush x:Key="CommonControls.ListBox.ForegroundBrushKey" Color="#FFE4E4E4"/>
     <SolidColorBrush x:Key="CommonControls.ListBox.BorderBrushKey" Color="#FF3D3D3D"/>

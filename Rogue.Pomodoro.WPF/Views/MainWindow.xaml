@@ -64,7 +64,7 @@
                     </Rectangle>
                 </Viewbox>
             </Button>
-            <Label Foreground="{DynamicResource MainWindow.TextBrushKey}" Content="{Binding Title}" VerticalAlignment="Center"/>
+            <Label Foreground="{DynamicResource MainWindow.ForegroundBrushKey}" Content="{Binding Title}" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
             <Button x:Name="MinimizeButton" Style="{StaticResource WindowControlButton}" Width="46" Height="32" Click="MinimizeButton_Click">

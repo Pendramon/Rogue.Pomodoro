@@ -7,8 +7,8 @@ namespace Rogue.Pomodoro.Core;
 
 internal sealed class ProcessWatcher : IProcessWatcher
 {
-    private ManagementEventWatcher creationWatcher;
-    private ManagementEventWatcher deletionWatcher;
+    private ManagementEventWatcher? creationWatcher;
+    private ManagementEventWatcher? deletionWatcher;
 
     public ProcessWatcher()
     {

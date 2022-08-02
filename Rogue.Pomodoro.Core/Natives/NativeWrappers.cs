@@ -78,7 +78,7 @@ public static class NativeWrappers
             {
                 NativeMethods.EnumThreadWindows(
                     thread.Id,
-                    (hWnd, lParam) =>
+                    (hWnd, _) =>
                     {
                         handles.Add(hWnd);
                         return true;

@@ -19,7 +19,7 @@ public class ViewModelBase : IViewModel, INotifyPropertyChanged
     /// an event that allows the children to send messages to the parent.
     /// </summary>
     /// <param name="children">The children view models of this parent view model.</param>
-    public void RegisterChildren(IEnumerable<IViewModel> children)
+    protected void RegisterChildren(IEnumerable<IViewModel> children)
     {
         foreach (var child in children)
         {
@@ -32,7 +32,7 @@ public class ViewModelBase : IViewModel, INotifyPropertyChanged
     /// an event that allows the child to send messages to the parent.
     /// </summary>
     /// <param name="child">The child view model of this parent view model.</param>
-    public void RegisterChild(IViewModel child)
+    protected void RegisterChild(IViewModel child)
     {
         child.ChildMessage += OnChildMessage;
     }
@@ -41,7 +41,7 @@ public class ViewModelBase : IViewModel, INotifyPropertyChanged
     /// Removes the child from this parent view model and unsubscribes it from the message event.
     /// </summary>
     /// <param name="child">The child view model of this parent view model.</param>
-    public void RemoveChild(IViewModel child)
+    protected void RemoveChild(IViewModel child)
     {
         child.ChildMessage -= OnChildMessage;
     }
@@ -50,7 +50,7 @@ public class ViewModelBase : IViewModel, INotifyPropertyChanged
     /// Removes the children from this parent view model and unsubscribes it from the message event.
     /// </summary>
     /// <param name="children">The children view models of this parent view model.</param>
-    public void RemoveChildren(IEnumerable<IViewModel> children)
+    protected void RemoveChildren(IEnumerable<IViewModel> children)
     {
         foreach (var child in children)
         {

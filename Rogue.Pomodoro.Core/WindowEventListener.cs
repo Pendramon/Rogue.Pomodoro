@@ -49,7 +49,7 @@ internal class WindowEventListener : IWindowEventListener
         }
 
         synchronizationContext.Send(
-            (_) =>
+            _ =>
             {
                 foreach (var windowEvent in windowEvents)
                 {
@@ -85,7 +85,7 @@ internal class WindowEventListener : IWindowEventListener
         }
 
         synchronizationContext.Send(
-            (_) =>
+            _ =>
             {
                 foreach (var windowEvent in windowEvents)
                 {
@@ -126,7 +126,7 @@ internal class WindowEventListener : IWindowEventListener
 
     private void OnWindowEvent(IntPtr hWinEventHook, WindowEvent eventType, IntPtr hwnd, ObjectIdentifier idObject, long idChild, uint dwEventThread, uint dwmsEventTime)
     {
-        Subscribe?.Invoke(null, new WindowEventArgs()
+        Subscribe?.Invoke(null, new WindowEventArgs
         {
             WindowHandle = hwnd,
             WindowEvent = eventType,

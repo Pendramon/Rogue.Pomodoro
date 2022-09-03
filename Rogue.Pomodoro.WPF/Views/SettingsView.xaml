@@ -18,6 +18,9 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <ListBox Grid.Column="0" SelectedItem="{Binding SelectedApplication, Mode=OneWayToSource}"  ItemsSource="{Binding AppBlockService.BlockedApps}">
+                <ListBox.InputBindings>
+                    <KeyBinding Command="{Binding DeleteSelectedFile}" Key="Delete" />
+                </ListBox.InputBindings>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}"/>
